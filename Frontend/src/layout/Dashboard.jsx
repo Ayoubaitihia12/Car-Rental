@@ -13,14 +13,17 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Outlet } from 'react-router-dom'
-// import {AiFillCar} from 'react-icons'
+import { Link, Outlet } from 'react-router-dom'
+import {AiFillCar} from 'react-icons/ai'
+import {GiCarKey} from "react-icons/gi"
+
+import { ADMIN_USERS,ADMIN_CARS,ADMIN_RENTS } from '../router'
 
 const navigation = [
-  { name: 'Dashboard', href: '#', icon: HomeIcon, current: true },
-  { name: 'Users', href: '#', icon: UsersIcon, current: false },
-  { name: 'Cars', href: '#', icon: FolderIcon, current: false },
-  { name: 'Rents', href: '#', icon: CalendarIcon, current: false },
+  { name: 'Dashboard', to: '#', icon: HomeIcon, current: true },
+  { name: 'Users', to: ADMIN_USERS, icon: UsersIcon, current: false },
+  { name: 'Cars', to: ADMIN_CARS, icon: AiFillCar, current: false },
+  { name: 'Rents', to: ADMIN_RENTS, icon: GiCarKey, current: false },
 ]
 
 const teams = [
@@ -43,14 +46,6 @@ export default function Dashboard() {
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog as="div" className="relative z-50 lg:hidden" onClose={setSidebarOpen}>
@@ -108,8 +103,8 @@ export default function Dashboard() {
                           <ul role="list" className="-mx-2 space-y-1">
                             {navigation.map((item) => (
                               <li key={item.name}>
-                                <a
-                                  href={item.href}
+                                <Link
+                                  to={item.to}
                                   className={classNames(
                                     item.current
                                       ? 'bg-gray-50 text-indigo-600'
@@ -125,37 +120,7 @@ export default function Dashboard() {
                                     aria-hidden="true"
                                   />
                                   {item.name}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </li>
-                        <li>
-                          <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                          <ul role="list" className="-mx-2 mt-2 space-y-1">
-                            {teams.map((team) => (
-                              <li key={team.name}>
-                                <a
-                                  href={team.href}
-                                  className={classNames(
-                                    team.current
-                                      ? 'bg-gray-50 text-indigo-600'
-                                      : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                                    'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                                  )}
-                                >
-                                  <span
-                                    className={classNames(
-                                      team.current
-                                        ? 'text-indigo-600 border-indigo-600'
-                                        : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                                      'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
-                                    )}
-                                  >
-                                    {team.initial}
-                                  </span>
-                                  <span className="truncate">{team.name}</span>
-                                </a>
+                                </Link>
                               </li>
                             ))}
                           </ul>
@@ -198,8 +163,8 @@ export default function Dashboard() {
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
                       <li key={item.name}>
-                        <a
-                          href={item.href}
+                        <Link
+                          to={item.to}
                           className={classNames(
                             item.current
                               ? 'bg-gray-50 text-indigo-600'
@@ -215,37 +180,7 @@ export default function Dashboard() {
                             aria-hidden="true"
                           />
                           {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li>
-                  <div className="text-xs font-semibold leading-6 text-gray-400">Your teams</div>
-                  <ul role="list" className="-mx-2 mt-2 space-y-1">
-                    {teams.map((team) => (
-                      <li key={team.name}>
-                        <a
-                          href={team.href}
-                          className={classNames(
-                            team.current
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
-                            'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
-                          )}
-                        >
-                          <span
-                            className={classNames(
-                              team.current
-                                ? 'text-indigo-600 border-indigo-600'
-                                : 'text-gray-400 border-gray-200 group-hover:border-indigo-600 group-hover:text-indigo-600',
-                              'flex h-6 w-6 shrink-0 items-center justify-center rounded-lg border text-[0.625rem] font-medium bg-white'
-                            )}
-                          >
-                            {team.initial}
-                          </span>
-                          <span className="truncate">{team.name}</span>
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -356,7 +291,7 @@ export default function Dashboard() {
               <Outlet />
             </div>
           </main>
-          
+
         </div>
       </div>
     </>

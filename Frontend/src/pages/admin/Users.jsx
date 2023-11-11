@@ -1,3 +1,13 @@
+import { Button } from "@/components/ui/button"
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
+  
+import {FiEdit} from "react-icons/fi"
+import {BsTrash} from "react-icons/bs"
 
 export default function Users() {
 
@@ -16,10 +26,7 @@ export default function Users() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
-            <h1 className="text-base font-semibold leading-6 text-gray-900">Users</h1>
-            <p className="mt-2 text-sm text-gray-700">
-              A list of all the users in your account including their name, title, email and role.
-            </p>
+            <h1 className="text-base font-semibold leading-6 text-gray-900">List of Users</h1>
           </div>
         </div>
         <div className="mt-8 flow-root">
@@ -68,10 +75,31 @@ export default function Users() {
                       <td className="whitespace-nowrap px-3 py-5 text-sm text-gray-500">
                         <div className="text-gray-900">{user.email}</div>
                       </td>
-                      <td className="relative whitespace-nowrap py-5 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                          Edit<span className="sr-only">, {user.name}</span>
-                        </a>
+                      <td className="relative whitespace-nowrap py-5 pl-3 flex items-center gap-x-2 pr-4 text-right text-sm font-medium sm:pr-0">
+                        <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger>
+                                    <Button className="bg-green-500 text-white px-2.5" variant="outline">
+                                        <FiEdit />
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                <p>Edit User</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
+                        <TooltipProvider>
+                            <Tooltip>
+                                <TooltipTrigger>
+                                    <Button className="bg-red-500 text-white px-2.5" variant="outline">
+                                        <BsTrash size={13} />
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                <p>Delete User</p>
+                                </TooltipContent>
+                            </Tooltip>
+                        </TooltipProvider>
                       </td>
                     </tr>
                   ))}

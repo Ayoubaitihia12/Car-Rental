@@ -4,20 +4,24 @@ import Users from "../pages/admin/Users";
 import Rents from "../pages/admin/Rents";
 import Cars from "../pages/admin/Cars";
 
+export const ADMIN_USERS = '/admin/users';
+export const ADMIN_CARS = '/admin/cars';
+export const ADMIN_RENTS = '/admin/rents';
+
 export const router = createBrowserRouter([
     {
         element: <Dashboard/>,
         children: [
             {
-                path:  '/admin/users',
+                path:  ADMIN_USERS,
                 element: <Users />,
             },
             {
-                path:  '/admin/cars',
+                path:  ADMIN_CARS,
                 element: <Cars />,
             },
             {
-                path:  '/admin/rents',
+                path:  ADMIN_RENTS,
                 element: <Rents />,
             }
         ]
