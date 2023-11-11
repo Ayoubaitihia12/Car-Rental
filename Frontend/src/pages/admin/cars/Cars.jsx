@@ -84,7 +84,8 @@ export default function Cars() {
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white">
                   {cars.map((car) => (
-                    <tr key={car.id}>
+                    <tr key={car
+                    .id}>
                       <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0">{car.id}</td>
                       <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-900">
                         {car.company}

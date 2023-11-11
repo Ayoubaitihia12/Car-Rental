@@ -17,13 +17,13 @@ import { Link, Outlet } from 'react-router-dom'
 import {AiFillCar} from 'react-icons/ai'
 import {GiCarKey} from "react-icons/gi"
 
-import { ADMIN_USERS,ADMIN_CARS,ADMIN_RENTS } from '../router'
+import { ADMIN_USERS,ADMIN_CARS,ADMIN_RENTS } from '../../router'
 
 const navigation = [
   { name: 'Dashboard', to: '#', icon: HomeIcon, current: true },
-  { name: 'Users', to: ADMIN_USERS, icon: UsersIcon, current: false },
-  { name: 'Cars', to: ADMIN_CARS, icon: AiFillCar, current: false },
-  { name: 'Rents', to: ADMIN_RENTS, icon: GiCarKey, current: false },
+  { name: 'Users', to: "#", icon: UsersIcon, current: false },
+  { name: 'Cars', to: "#", icon: AiFillCar, current: false },
+  { name: 'Rents', to: "#", icon: GiCarKey, current: false },
 ]
 
 const teams = [

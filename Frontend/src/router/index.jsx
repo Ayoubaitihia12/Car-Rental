@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "../layout/dashboard";
+import Dashboard from "../layout/admin/Dashboard";
 import Users from "../pages/admin/Users";
-import Rents from "../pages/admin/Rents";
-import Cars from "../pages/admin/Cars";
+import Rents from "../pages/admin/rents/Rents";
+import Cars from "../pages/admin/cars/Cars";
+import Navbar from "../layout/public/Navbar";
+import Home from "../pages/public/Home";
 
 export const ADMIN_USERS = '/admin/users';
 export const ADMIN_CARS = '/admin/cars';
@@ -24,6 +26,15 @@ export const router = createBrowserRouter([
                 path:  ADMIN_RENTS,
                 element: <Rents />,
             }
+        ]
+    },
+    {
+        element: <Navbar />,
+        children: [
+            {
+                path:  "/",
+                element: <Home/>
+            },
         ]
     }
 ])
