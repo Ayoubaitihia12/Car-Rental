@@ -11,7 +11,7 @@ const TopCars = () => {
                 <h1 className='text-3xl font-bold text-center'>Explore Our Top Deal From <br /> Top-Rated Dealer</h1>
             </div>
 
-            <div className='grid grid-cols-4 mt-16'>
+            <div className='grid grid-cols-3 mt-16'>
                 <CarCard/>
             </div>
 
