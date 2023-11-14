@@ -5,9 +5,7 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-  
-import {FiEdit} from "react-icons/fi"
-import {BsTrash} from "react-icons/bs"
+import ActionBtn from "../../components/ui/ActionBtn"
 
 export default function Users() {
 
@@ -45,7 +43,7 @@ export default function Users() {
                         Last Name
                     </th>
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
-                        Telephone
+                        Phone
                     </th>
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                         Email
@@ -76,30 +74,8 @@ export default function Users() {
                         <div className="text-gray-900">{user.email}</div>
                       </td>
                       <td className="relative whitespace-nowrap py-5 pl-3 flex items-center gap-x-2 pr-4 text-right text-sm font-medium sm:pr-0">
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Button className="bg-green-500 text-white px-2.5" variant="outline">
-                                        <FiEdit />
-                                    </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                <p>Edit User</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
-                        <TooltipProvider>
-                            <Tooltip>
-                                <TooltipTrigger>
-                                    <Button className="bg-red-500 text-white px-2.5" variant="outline">
-                                        <BsTrash size={13} />
-                                    </Button>
-                                </TooltipTrigger>
-                                <TooltipContent>
-                                <p>Delete User</p>
-                                </TooltipContent>
-                            </Tooltip>
-                        </TooltipProvider>
+                        <ActionBtn edit={true} link="/fkf" />
+                        <ActionBtn edit={false}link="/fff" />
                       </td>
                     </tr>
                   ))}

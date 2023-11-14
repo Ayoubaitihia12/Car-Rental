@@ -6,6 +6,7 @@ import {FormItem,FormLabel,FormControl,FormDescription,FormField,FormMessage,For
 import {Button} from '../../components/ui/button'
 import {Input} from '../../components/ui/input'
 import { useNavigate } from 'react-router-dom'
+import {axiosClient} from '../../api/axios'
  
 const formSchema = z.object({
   email: z.string().email().min(2).max(30),
@@ -27,7 +28,15 @@ const Login = () => {
       // 2. Define a submit handler.
       function onSubmit(values) {
         
-        console.log(values);       
+        axiosClient.get('sanctum/csrf-cookie').then(()=>{
+            
+            axiosClient.post('/login',values).then((response)=>{
+
+                console.log(response);
+
+            }).catch((error) => console.log(error))
+        
+        }).catch((error) => console.log(error))
  
       }
 

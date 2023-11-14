@@ -91,11 +91,9 @@ export default function Dashboard() {
                   {/* Sidebar component, swap this element with another sidebar if you like */}
                   <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-4">
                     <div className="flex h-16 shrink-0 items-center">
-                      <img
-                        className="h-8 w-auto"
-                        src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                        alt="Your Company"
-                      />
+                    <a href="#" className="-m-1.5 p-1.5">
+                      <h3 className='text-xl font-medium'><span className='text-primary-color'>Drive</span>Vista</h3>
+                    </a>
                     </div>
                     <nav className="flex flex-1 flex-col">
                       <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -107,14 +105,14 @@ export default function Dashboard() {
                                   to={item.to}
                                   className={classNames(
                                     item.current
-                                      ? 'bg-gray-50 text-indigo-600'
-                                      : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
+                                      ? 'bg-gray-50 text-primary-color'
+                                      : 'text-gray-700 hover:text-primary-color hover:bg-gray-50',
                                     'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                                   )}
                                 >
                                   <item.icon
                                     className={classNames(
-                                      item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
+                                      item.current ? 'text-primary-color' : 'text-gray-400 group-hover:text-primary-color',
                                       'h-6 w-6 shrink-0'
                                     )}
                                     aria-hidden="true"
@@ -128,10 +126,10 @@ export default function Dashboard() {
                         <li className="mt-auto">
                           <a
                             href="#"
-                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                            className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-primary-color"
                           >
                             <Cog6ToothIcon
-                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                              className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-primary-color"
                               aria-hidden="true"
                             />
                             Settings
@@ -151,11 +149,9 @@ export default function Dashboard() {
           {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 pb-4">
             <div className="flex h-16 shrink-0 items-center">
-              <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt="Your Company"
-              />
+              <a href="#" className="-m-1.5 p-1.5">
+                <h3 className='text-xl font-medium'><span className='text-primary-color'>Drive</span>Vista</h3>
+              </a>                   
             </div>
             <nav className="flex flex-1 flex-col">
               <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -167,14 +163,14 @@ export default function Dashboard() {
                           to={item.to}
                           className={classNames(
                             item.current
-                              ? 'bg-gray-50 text-indigo-600'
-                              : 'text-gray-700 hover:text-indigo-600 hover:bg-gray-50',
+                              ? 'bg-gray-50 text-primary-color'
+                              : 'text-gray-700 hover:text-primary-color hover:bg-gray-50',
                             'group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold'
                           )}
                         >
                           <item.icon
                             className={classNames(
-                              item.current ? 'text-indigo-600' : 'text-gray-400 group-hover:text-indigo-600',
+                              item.current ? 'text-primary-color' : 'text-gray-400 group-hover:text-primary-color',
                               'h-6 w-6 shrink-0'
                             )}
                             aria-hidden="true"
@@ -188,10 +184,10 @@ export default function Dashboard() {
                 <li className="mt-auto">
                   <a
                     href="#"
-                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-indigo-600"
+                    className="group -mx-2 flex gap-x-3 rounded-md p-2 text-sm font-semibold leading-6 text-gray-700 hover:bg-gray-50 hover:text-primary-color"
                   >
                     <Cog6ToothIcon
-                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-indigo-600"
+                      className="h-6 w-6 shrink-0 text-gray-400 group-hover:text-primary-color"
                       aria-hidden="true"
                     />
                     Settings

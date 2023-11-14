@@ -20,7 +20,7 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-6xl items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex items-center gap-x-16">
             <a href="#" className="-m-1.5 p-1.5">
-                <h3 className='text-xl font-medium'>DriveVista</h3>
+                <h3 className='text-xl font-medium'><span className='text-primary-color'>Drive</span>Vista</h3>
             </a>
             <div className="hidden lg:flex lg:gap-x-12">
                 {navigation.map((item) => (

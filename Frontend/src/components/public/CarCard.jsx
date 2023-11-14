@@ -7,7 +7,7 @@ import {AiOutlineHeart} from "react-icons/ai"
 
 const CarCard = () => {
   return (
-    <div className='p-4 flex flex-col gap-y-4 shadow-xl border rounded-2xl'>
+    <div className='p-4 flex flex-col gap-y-4 shadow-lg border rounded-2xl'>
         
         <div className='rounded-2xl overflow-hidden h-[200px] border'>
             <img className='w-full h-full object-cover' src={car1} alt="" />
@@ -49,7 +49,7 @@ const CarCard = () => {
 
           <div className='flex py-2 items-center justify-between'>
 
-            <h2 className='font-medium text-2xl'>$40<span className='text-sm font-light'> /day</span></h2> 
+            <h2 className='font-medium text-2xl text-primary-color'>$40<span className='text-sm text-black font-light'> /day</span></h2> 
 
             <div className='flex items-center gap-x-2'>
               <button className='bg-blue-100 rounded-lg text-blue-500 w-[35px] h-[35px] flex items-center justify-center'>
