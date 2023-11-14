@@ -6,10 +6,13 @@ import Cars from "../pages/admin/cars/Cars";
 import Navbar from "../layout/public/Navbar";
 import Home from "../pages/public/Home";
 import Contact from "../pages/public/Contact";
+import Login from "../pages/public/Login";
 
 export const ADMIN_USERS = '/admin/users';
 export const ADMIN_CARS = '/admin/cars';
 export const ADMIN_RENTS = '/admin/rents';
+
+export const LOGIN = '/login';
 
 export const router = createBrowserRouter([
     {
@@ -39,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: '/contact',
                 element: <Contact/>
+            },
+            {
+                path: LOGIN,
+                element: <Login/>
             }
         ]
     }
